@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{{ page_title }}</h1>
+<br> {% if request.user.is_authenticated %}
+<h3>Your Username: {{ request.user.username }}</h3>
+<h3>Your Display Name: {{ request.user.display_name }}</h3>
+<h3>{{ settings_authusermod }}</h3>
+<br>
+<br>
+<h3>Got something else to do? Don't forget to logout below:</h3>
+<a href="logout/">I'll Be Back</a> {% else %}
+<h3>New member? Please signup below:</h3>
+<a href="signup/">SignUp Form</a>
+<br>
+<h3>Already a member? Please login below:</h3>
+<a href="login/">Login Form</a> {% endif %} {% endblock %}
